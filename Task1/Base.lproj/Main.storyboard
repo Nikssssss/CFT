@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,92 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Task1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введите дату" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KgN-lN-0cu">
+                                <rect key="frame" x="81.5" y="428" width="251" height="50"/>
+                                <color key="backgroundColor" red="0.032677551963864016" green="0.066326483791722277" blue="0.17631815900706282" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aGe-j8-1JX"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="251" id="dNy-r2-WST"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Formatter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t40-hn-cdg">
+                                <rect key="frame" x="87.5" y="313" width="239" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="239" id="PqH-Zq-S5h"/>
+                                    <constraint firstAttribute="height" constant="50" id="Xtx-eg-Tjy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="29"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZg-UI-4qF">
+                                <rect key="frame" x="30" y="504" width="354" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="vxO-yR-7pQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuW-fF-Ylx">
+                                <rect key="frame" x="136.5" y="563" width="141" height="36"/>
+                                <color key="backgroundColor" red="0.046477346539999999" green="0.098480096840000003" blue="0.22672125309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="ZeN-h9-O5w"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="141" id="hYS-gC-rfL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Конвертировать">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="convertButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yOS-Tm-K8W"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.011205466157521406" green="0.011425350443213146" blue="0.073978693798334882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mZg-UI-4qF" secondAttribute="trailing" constant="30" id="1F4-rR-88A"/>
+                            <constraint firstItem="KgN-lN-0cu" firstAttribute="top" secondItem="t40-hn-cdg" secondAttribute="bottom" constant="65" id="2Ud-mX-OEp"/>
+                            <constraint firstItem="wuW-fF-Ylx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="M3P-uZ-8Qv"/>
+                            <constraint firstItem="mZg-UI-4qF" firstAttribute="top" secondItem="KgN-lN-0cu" secondAttribute="bottom" constant="26" id="Oc9-d4-nh3"/>
+                            <constraint firstItem="KgN-lN-0cu" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Ssn-wa-Xy6"/>
+                            <constraint firstItem="mZg-UI-4qF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="a4m-dV-WdH"/>
+                            <constraint firstItem="KgN-lN-0cu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bTh-kE-NcE"/>
+                            <constraint firstItem="wuW-fF-Ylx" firstAttribute="top" secondItem="mZg-UI-4qF" secondAttribute="bottom" constant="26" id="cTi-eV-VIJ"/>
+                            <constraint firstItem="mZg-UI-4qF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="o1D-Ze-Nxh"/>
+                            <constraint firstItem="t40-hn-cdg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xNS-XP-gVy"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="convertButton" destination="wuW-fF-Ylx" id="iau-BD-w5L"/>
+                        <outlet property="convertedDateLabel" destination="mZg-UI-4qF" id="1kv-0F-ghi"/>
+                        <outlet property="dateDelegate" destination="lU1-yH-RNT" id="Msa-R7-PVM"/>
+                        <outlet property="dateTF" destination="KgN-lN-0cu" id="dAb-aJ-B3j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="lU1-yH-RNT" customClass="MaskedTextFieldDelegate" customModule="InputMask">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="primaryMaskFormat" value="[00]{.}[00]{.}[0000]"/>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="123.88392857142857"/>
         </scene>
     </scenes>
 </document>
