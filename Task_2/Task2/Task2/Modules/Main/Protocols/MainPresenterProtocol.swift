@@ -8,5 +8,6 @@
 import Foundation
 
 protocol MainPresenterProtocol: class {
-    
+    func configureView()
+    func newsButtonClicked()
 }

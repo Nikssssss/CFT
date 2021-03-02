@@ -8,5 +8,5 @@
 import Foundation
 
 protocol MainInteractorProtocol: class {
-    
+    func getFamousResources() -> [String]
 }

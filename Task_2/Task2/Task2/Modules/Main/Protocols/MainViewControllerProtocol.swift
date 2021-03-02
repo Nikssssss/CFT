@@ -8,5 +8,5 @@
 import Foundation
 
 protocol MainViewControllerProtocol: class {
-    
+    func configureView(using sources: [String])
 }

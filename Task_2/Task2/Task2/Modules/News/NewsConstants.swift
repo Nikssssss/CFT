@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 struct NewsConstants {
+    static let viewControllerTitle = "News"
+    
     static let tableViewRowHeight = 320
     
     static let newsCellIdentifier = "NewsTableViewCell"

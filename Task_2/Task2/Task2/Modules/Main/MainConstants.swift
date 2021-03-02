@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 struct MainConstants {
+    static let viewControllerTitle = "Home"
+    
     static let newsButtonBottom = -50
     static let newsButtonWidth = 200
     static let newsButtonHeight = 50
@@ -24,7 +26,7 @@ struct MainConstants {
     static let titleLabelFont = "Times New Roman"
     static let descriptionLabelTop = 20
     static let descriptionLabelFontSize = 17
-    static let descriptionLabelText = "Новости в России и в США"
+    static let descriptionLabelText = "Новости в США"
     static let descriptionLabelFont = "Times New Roman"
     
     static let sourcesStackViewSpacing = 30

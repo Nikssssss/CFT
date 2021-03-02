@@ -15,27 +15,29 @@ class MainViewController: UIViewController {
     private var descriptionLabel: UILabel!
     private var sourcesStackView: UIStackView!
     
+    let configurator: MainConfiguratorProtocol = MainConfigurator()
+    var presenter: MainPresenterProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupView()
+        configurator.configure(with: self)
+        presenter.configureView()
     }
-    
 }
 
 extension MainViewController: MainViewControllerProtocol {
-    
-}
-
-private extension MainViewController {
-    func setupView(){
+    func configureView(using sources: [String]){
         self.view.backgroundColor = .white
+        self.title = MainConstants.viewControllerTitle
         self.setupNewsButton()
         self.setupBackgroundScrollView()
         self.setupLabels()
         self.setupSourcesStackView()
-        self.setSourcesViews(using: ["A", "B", "C"])
+        self.setSourcesViews(using: sources)
     }
-    
+}
+
+private extension MainViewController {
     func setupNewsButton(){
         self.newsButton = UIButton()
         self.view.addSubview(newsButton)
@@ -51,7 +53,7 @@ private extension MainViewController {
         self.newsButton.layer.borderWidth = CGFloat(MainConstants.newsButtonBorderWidth)
         self.newsButton.layer.borderColor = UIColor.gray.cgColor
         self.newsButton.layer.cornerRadius = CGFloat(MainConstants.newsButtonCornerRadius)
-        self.newsButton.addTarget(self, action: #selector(self.buttonClicked), for: .touchUpInside)
+        self.newsButton.addTarget(self, action: #selector(self.newsButtonClicked), for: .touchUpInside)
     }
     
     func setupBackgroundScrollView(){
@@ -137,7 +139,7 @@ private extension MainViewController {
     }
     
     
-    @objc func buttonClicked() {
-        print("Button Clicked")
+    @objc func newsButtonClicked() {
+        presenter.newsButtonClicked()
     }
 }

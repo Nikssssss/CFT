@@ -66,14 +66,14 @@ private extension NewsTableViewCell {
         }
         self.newsTitleLabel.font = .systemFont(ofSize: CGFloat(NewsConstants.newsTitleLabelFontSize))
         self.newsTitleLabel.textAlignment = .center
-        self.newsTitleLabel.adjustsFontSizeToFitWidth = true
     }
     
     func setupImageView(){
         self.contentView.addSubview(self.newsImageView)
         self.newsImageView.snp.makeConstraints { (make) in
-            make.bottom.equalTo(self.newsTitleLabel).offset(NewsConstants.newsImageViewBottom)
+            make.bottom.equalTo(self.newsTitleLabel.snp.top).offset(NewsConstants.newsImageViewBottom)
             make.right.left.top.equalTo(self.contentView)
         }
+        self.newsImageView.contentMode = .scaleToFill
     }
 }

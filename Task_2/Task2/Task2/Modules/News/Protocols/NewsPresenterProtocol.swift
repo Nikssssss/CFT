@@ -8,5 +8,6 @@
 import Foundation
 
 protocol NewsPresenterProtocol: class {
-    
+    func configureView()
+    func setViewArticles(using articles: [ArticleInfo]?)
 }

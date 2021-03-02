@@ -8,5 +8,5 @@
 import Foundation
 
 protocol NewsInteractorProtocol: class {
-    
+    func downloadArticles()
 }

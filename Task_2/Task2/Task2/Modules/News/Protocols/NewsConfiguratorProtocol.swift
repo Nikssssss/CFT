@@ -8,5 +8,5 @@
 import Foundation
 
 protocol NewsConfiguratorProtocol: class {
-    
+    func configure(with viewController: NewsViewController)
 }
